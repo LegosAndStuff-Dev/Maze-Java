@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Maze_Mason
+class Maze_MasonN
 {
 	public static void main (String[] args)
 	{
@@ -21,10 +21,9 @@ class Maze_Mason
 			System.out.print("Enter move: ");
 			move = input.next();
 			
-			System.out.println(move);
-			//vaildMove = maze.move(move);
-			maze.move("d");
-			vaildMove = true;
+			vaildMove = maze.move(move);
+			
+			//vaildMove = true;
 			
 			if (vaildMove == true) {
 				maze.displayOutput();
