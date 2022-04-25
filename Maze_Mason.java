@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Maze_MasonNorberg
+class Maze_Mason
 {
 	public static void main (String[] args)
 	{
