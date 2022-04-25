@@ -125,30 +125,31 @@ public class Maze {
     			
     		}
     	}
+    	*/
     	
-    	else if (move.equalsIgnoreCase("s") || move.equalsIgnoreCase("down")) {
+    	if (move.equalsIgnoreCase("s") || move.equalsIgnoreCase("down")) {
     		tempRow = getRow();
     		tempCol = getCol();
     		
-    		if ((tempCol - 1) <= -1) {
+    		newRow = tempRow + 1;
+    		newCol = tempCol;
+    		
+    		if (maze[newRow][newCol].equals("-") || maze[newRow][newCol].equals("|") || maze[newRow][newCol].equals("_")) {
     			vaildMove = false;
     		}
     		
-    		else if (maze[getRow()][getCol() - 1].equals("-") || maze[getRow()][getCol() - 1].equals("|") || maze[getRow()][getCol() - 1].equals("_")) {
-    			vaildMove = false;
-    		}
-    		
-    		else if (maze[getRow()][getCol() - 1].equals("x")) {
-    			maze[tempRow][tempCol - 1] = "O"; 
-    			maze[tempRow][tempCol] = " ";
+    		else if (maze[newRow][newCol].equals(" ")) {
+    			System.out.println("got 2nd");
+    			maze[newRow][newCol] = "O"; 
+    			maze[tempRow][newCol] = " ";
     			
     			vaildMove = true;
     			
     		}
     	}
-    	*/
     	
-    	if (move.equalsIgnoreCase("d") || move.equalsIgnoreCase("right")) {
+    	
+    	else if (move.equalsIgnoreCase("d") || move.equalsIgnoreCase("right")) {
     		tempRow = getRow();
     		tempCol = getCol();
     		
