@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Maze_MasonN
+class Maze_Mason
 {
 	public static void main (String[] args)
 	{
@@ -9,6 +9,7 @@ class Maze_MasonN
 		
 		boolean gameRunning = true;
 		boolean vaildMove;
+		boolean winGame;
 		String move;
 		
 		maze.displayOutput();
@@ -27,11 +28,19 @@ class Maze_MasonN
 			
 			if (vaildMove == true) {
 				maze.displayOutput();
+				
+				winGame = maze.checkWinGame();
+				
+				if (winGame == true) {
+					gameRunning = false;
+				}
 			}
 			
 			else {
 				System.out.println("An error happened please try again");
 			}
 		}
+		
+		System.out.println("You won, congrats!");
 	}
 }

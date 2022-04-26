@@ -20,7 +20,7 @@ public class Maze {
 		{"|", " ", "|", "_", "|", "_", "_", "_", "|", " ", " ", " ", " ", " ", "|"},
 		{"|", " ", " ", " ", " ", " ", " ", " ", " ", " ", "-", "-", "-", "-", "|"},
 		{"|", " ", "-", "-", "-", " ", "-", " ", "|", " ", " ", " ", " ", " ", "|"},
-		{"|", "_", "|", " ", "|", "_", "|", "_", "|", "-", "-", "-", "-", "-", "|"}
+		{"|", "_", "|", " ", "|", "_", "|", "_", "|", "-", "-", "-", "-", " ", "|"}
 							};
 							
 	private boolean foundRow;
@@ -104,16 +104,19 @@ public class Maze {
     			
     		}
     	}
-    	
-    	else if (move.equalsIgnoreCase("a") || move.equalsIgnoreCase("left")) {
+    	*/
+    	if (move.equalsIgnoreCase("a") || move.equalsIgnoreCase("left")) {
     		tempRow = getRow();
     		tempCol = getCol();
     		
-    		if ((tempCol - 1) <= -1) {
+    		newRow = tempRow;
+    		newCol = tempCol -1;
+    		
+    		if (newCol <= -1) {
     			vaildMove = false;
     		}
     		
-    		else if (maze[getRow()][getCol() - 1].equals("-") || maze[getRow()][getCol() - 1].equals("|") || maze[getRow()][getCol() - 1].equals("_")) {
+    		else if (maze[newRow][newCol].equals("-") || maze[newRow][newCol].equals("|") || maze[newRow][newCol].equals("_")) {
     			vaildMove = false;
     		}
     		
@@ -125,9 +128,8 @@ public class Maze {
     			
     		}
     	}
-    	*/
     	
-    	if (move.equalsIgnoreCase("s") || move.equalsIgnoreCase("down")) {
+    	else if (move.equalsIgnoreCase("s") || move.equalsIgnoreCase("down")) {
     		tempRow = getRow();
     		tempCol = getCol();
     		
@@ -171,5 +173,22 @@ public class Maze {
     	}
     	
     	return vaildMove;
+    	
+    }
+    
+    public boolean checkWinGame () {
+    	//10
+    	//13
+    	
+    	tempRow = getRow();
+    	tempCol = getCol();
+    	
+    	if (tempRow == 10 && tempCol == 13) {
+    		return true;
+    	}
+    	
+    	else {
+    		return false;
+    	}
     }
 }
