@@ -40,7 +40,7 @@ class Maze_Mason
 				System.out.println("An error happened please try again");
 			}
 		}
-		
+		System.out.println();
 		System.out.println("You won, congrats!");
 	}
 }

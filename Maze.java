@@ -87,24 +87,27 @@ public class Maze {
     	//a col -1
     	//s row -1
     	//d col +1
-    	/*
+    	
+    	tempRow = getRow();
+    	tempCol = getCol();
+    	
+    	newRow = tempRow - 1;
+    	newCol = tempCol;
+    	
     	if (move.equalsIgnoreCase("w") || move.equalsIgnoreCase("up")) {
-    		if (maze[getRow() + 1][getCol()].equals("-") || maze[getRow() + 1][getCol()].equals("|") || maze[getRow() + 1][getCol()].equals("_")) {
+    		if (maze[newRow][newCol].equals("-") || maze[newRow][newCol].equals("|") || maze[newRow][newCol].equals("_")) {
     			vaildMove = false;
     		}
     		
-    		else if (maze[getRow() + 1][getCol()].equals(" ")) {
-    			tempRow = getRow();
-    			tempCol = getCol();
-    			
-    			maze[getRow() + 1][getCol()] = "O"; 
-    			maze[getRow()][getCol()] = " ";
+    		else if (maze[newRow][newCol].equals(" ")) {
+    			maze[newRow][newCol] = "O"; 
+    			maze[tempRow][tempCol] = " ";
     			
     			vaildMove = true;
     			
     		}
     	}
-    	*/
+    	
     	if (move.equalsIgnoreCase("a") || move.equalsIgnoreCase("left")) {
     		tempRow = getRow();
     		tempCol = getCol();
