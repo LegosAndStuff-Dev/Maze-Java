@@ -144,7 +144,7 @@ public class Maze {
     		}
     		
     		else if (maze[newRow][newCol].equals(" ")) {
-    			System.out.println("got 2nd");
+    			System.out.println();
     			maze[newRow][newCol] = "O"; 
     			maze[tempRow][newCol] = " ";
     			
@@ -166,7 +166,7 @@ public class Maze {
     		}
     		
     		else if (maze[newRow][newCol].equals(" ")) {
-    			System.out.println("2nd part");
+    			System.out.println();
     			maze[tempRow][newCol] = "O"; 
     			maze[tempRow][tempCol] = " ";
     			
